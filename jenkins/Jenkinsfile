@@ -10,7 +10,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+               //sh mvn -N io.takari:maven:wrapper
+                sh mvn clean install
+                //sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
